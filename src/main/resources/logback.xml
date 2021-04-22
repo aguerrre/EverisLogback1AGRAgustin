@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
+	<!-- VARIABLE ASOCIADA A LA FECHA -->
 	<timestamp key="logDateVar" datePattern="dd-MM-yyyy" />
-	<appender name="RollingFile"
+	<appender name="RootPipe"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>C://dev//logs/EverisLogback1AGRAgustin/elb1AGRAgustin.log</file>
+		<file>C://dev//logs//elb1AGRAgustin-${logDateVar}.log</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<fileNamePattern>C://dev//logs/EverisLogback1AGRAgustin/elb1AGRAgustin.log.zip</fileNamePattern>
-			<!-- CANTIDAD DE FICHEROS -->
+			<fileNamePattern>C://dev//logs//everisLogFile-${logDateVar}.%i.logdual.zip</fileNamePattern>
 			<minIndex>1</minIndex>
 			<maxIndex>3</maxIndex>
 		</rollingPolicy>
@@ -21,8 +20,8 @@
 				- %msg%n</pattern>
 		</encoder>
 	</appender>
-	
+
 	<root level="debug">
-		<appender-ref ref="RollingFile" />
+		<appender-ref ref="RootPipe" />
 	</root>
 </configuration>
