@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration packagingData="true" debug="false">
 
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
-			<layout class="com.everis.logbackdesafio.DesafioLayout">
-				<prefix>ConsoleLog</prefix>
-				<printThreadName>true</printThreadName>
-			</layout>
-		</encoder>
-	</appender>
+	<!-- APPENDER POR CONSOLA CON LAYAOUT PERSONALIZADO -->
 
-	<root level="debug">
-		<appender-ref ref="STDOUT" />
-	</root>
+<!-- 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> -->
+<!-- 		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder"> -->
+<!-- 			<layout class="com.everis.logbackdesafio.DesafioLayout"> -->
+<!-- 				<prefix>ConsoleLog</prefix> -->
+<!-- 				<printThreadName>true</printThreadName> -->
+<!-- 			</layout> -->
+<!-- 		</encoder> -->
+<!-- 	</appender> -->
 
-	<!-- <timestamp key="logDateVar" datePattern="dd-MM-yyyy" />
+<!-- 	<root level="debug"> -->
+<!-- 		<appender-ref ref="STDOUT" /> -->
+<!-- 	</root> -->
+	
+	<!-- APPENDER ROLLINGFILE COMO ESPECIFICA EL EJERCICIO -->
+	
+	<timestamp key="logDateVar" datePattern="dd-MM-yyyy" />
 	<appender name="RootPipe"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>C://dev//logs//elb1AGRAgustin-${logDateVar}.log</file>
@@ -37,5 +41,5 @@
 
 	<root level="debug">
 		<appender-ref ref="RootPipe" />
-	</root> -->
+	</root>
 </configuration>
