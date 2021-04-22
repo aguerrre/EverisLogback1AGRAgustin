@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration packagingData="true" debug="false">
 
-	<timestamp key="logDateVar" datePattern="dd-MM-yyyy" />
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="com.everis.logbackdesafio.DesafioLayout">
+				<prefix>ConsoleLog</prefix>
+				<printThreadName>true</printThreadName>
+			</layout>
+		</encoder>
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+	<!-- <timestamp key="logDateVar" datePattern="dd-MM-yyyy" />
 	<appender name="RootPipe"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>C://dev//logs//elb1AGRAgustin-${logDateVar}.log</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<fileNamePattern>C://dev//logs//everisLogFile-${logDateVar}.%i.logdual.zip</fileNamePattern>
+			<fileNamePattern>C://dev//logs//everisLogFile-${logDateVar}.%i.logdual.zip
+			</fileNamePattern>
 			<minIndex>1</minIndex>
 			<maxIndex>3</maxIndex>
 		</rollingPolicy>
@@ -23,5 +37,5 @@
 
 	<root level="debug">
 		<appender-ref ref="RootPipe" />
-	</root>
+	</root> -->
 </configuration>
